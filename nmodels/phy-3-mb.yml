@@ -1,0 +1,19 @@
+name: phi-3-mb
+context_size: 2048
+f16: true
+threads: 11
+gpu_layers: 90
+mmap: true
+parameters:
+  # Reference any HF model or a local file here
+  model: https://cdn-lfs-us-1.huggingface.co/repos/41/c8/41c860f65b01de5dc4c68b00d84cead799d3e7c48e38ee749f4c6057776e2e9e/5d99003e395775659b0dde3f941d88ff378b2837a8dc3a2ea94222ab1420fad3?response-content-disposition=attachment%3B+filename*%3DUTF-8%27%27Phi-3-mini-4k-instruct-fp16.gguf%3B+filename%3D%22Phi-3-mini-4k-instruct-fp16.gguf%22%3B&Expires=1714897423&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTcxNDg5NzQyM319LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2RuLWxmcy11cy0xLmh1Z2dpbmdmYWNlLmNvL3JlcG9zLzQxL2M4LzQxYzg2MGY2NWIwMWRlNWRjNGM2OGIwMGQ4NGNlYWQ3OTlkM2U3YzQ4ZTM4ZWU3NDlmNGM2MDU3Nzc2ZTJlOWUvNWQ5OTAwM2UzOTU3NzU2NTliMGRkZTNmOTQxZDg4ZmYzNzhiMjgzN2E4ZGMzYTJlYTk0MjIyYWIxNDIwZmFkMz9yZXNwb25zZS1jb250ZW50LWRpc3Bvc2l0aW9uPSoifV19&Signature=CYpuIiZBoQiqwlEg%7EkwI6w3vNZCI0ICCnLNM2QxrPtK%7E2PSR5TjAgVXIU3AHIaDPb3o8ChqdeR69YIra6naAL1P0Wtmvh-bO6IsgRH%7Eaor-Qfoj2qOpi7%7EEzEqo4XjW-YpL5R%7ElCJE0KctNqHz6I3NF4xmy9K1TzSlG8diAeSKdJhiHC%7Ez91YWfK6T6vbjF4U9teMcZetJ1lt4ST5tsD9aMFhP2FaXF5Ft0zYoR5r45FzlKTXObfIqzEUiFFD8PgubDsX0obKgyCb9jbX-wMXarlZm5IGBNargT2arnAOiORSqHOF%7E38SkyEAEmQDel9-lWMSv80cuotZlzGS6pzRQ__&Key-Pair-Id=KCD77M1F0VK2B
+  temperature: 0.2
+  top_k: 40
+  top_p: 0.95
+template:
+
+  chat: &template |
+    Instruct: {{.Input}}
+    Output:
+  # Modify the prompt template here ^^^ as per your requirements
+  completion: *template
