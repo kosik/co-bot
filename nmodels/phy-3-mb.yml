@@ -6,7 +6,7 @@ gpu_layers: 90
 mmap: true
 parameters:
   # Reference any HF model or a local file here
-  model: huggingface://microsoft/Phi-3-mini-4k-instruct-gguf
+  model: https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-gguf/blob/main/Phi-3-mini-4k-instruct-q4.gguf
   temperature: 0.2
   top_k: 40
   top_p: 0.95
